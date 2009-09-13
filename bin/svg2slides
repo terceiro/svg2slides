@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'svg_2_slides'
+Svg2Slides.new.run

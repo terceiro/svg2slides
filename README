@@ -1,0 +1,41 @@
+= Synopsis
+
+svg2slides - generates slides from layered SVG drawings
+
+svg2slides reads SVG drawings that have layers and produces as output one SVG
+per layer. The output SVG file for each layer has that layer and all the
+layers below it, i.e. the layers above the current layer are removed from the
+drawing. This is useful to generate sequences of slides, where slide N is
+composed of layers 1, 2, ..., N of the original drawing.
+
+= Usage
+
+svg2slides [OPTION] ... FILE [ FILE ...]
+
+--help, -h:
+   Display help
+
+--suffix SUFFIX
+   The suffix used for output filenames. Default: '-%03d'.
+
+= Author
+
+Antonio Terceiro <terceiro@softwarelivre.org>
+
+= Copyright
+
+Copyright © 2009 Antonio Terceiro
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
