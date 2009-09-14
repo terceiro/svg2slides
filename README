@@ -36,6 +36,30 @@ svg2slides [OPTION] ... FILE [ FILE ...]
    | -%03d  | file-001.svg, file-002.svg |
    | _%d    | file_1.svg, file_2.svg     |
 
+= MAKEFILE SNIPPET
+
+Included in the package you'll find a Makefile snippet that you can include in
+your own Makefile's to build slides from your SVG drawings. To do that, you
+must declare the SVG2SLIDES_INPUT variable and after that include the snippet:
+
+   SVG2SLIDES_INPUT = drawing1.svg drawing2.svg
+   include /usr/share/svg2slides/svg2slides.mk
+   all: $(SVG2SLIDES_SLIDES)
+
+This Makefile will build the slides in both drawing1.svg and drawing2.svg.
+
+The you can make your own targets depend on $(SVG2SLIDES_SLIDES), which will
+contain a list of all slides that will be generated from the files you listed
+in the SVG2SLIDES_INPUT variable.
+
+A `clean` target will be available automatically, so `make clean` will delete
+the slides generated from your input files. If you need to add your own `clean`
+target, make sure you do so with two colons ("clean::").
+
+The Makefile snippet will be installed normally in
+/usr/share/svg2slides/svg2slides.mk, but depending on your operating system it
+may be in another place. It's intended to be used with GNU make.
+
 = AUTHOR
 
 Antonio Terceiro <terceiro@softwarelivre.org>
