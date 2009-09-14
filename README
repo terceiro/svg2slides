@@ -15,21 +15,26 @@ svg2slides [OPTION] ... FILE [ FILE ...]
 = OPTIONS
 
 --help, -h:
-   Display help
+
+   Displays help
 
 --version, -v:
+
    Displays version information and exits.
 
 --suffix SUFFIX
+
    The suffix used for output filenames. Default: '-%03d'. This suffix will be
-   expanded with the index of the slide and inserted between the basename of
-   the input file and the .svg extension to form the output file names.
+   expanded as a printf(3) format string with the index of the given slide as
+   argument, and will be inserted between the basename of the input file and
+   the .svg extension to form the output file names.
 
-   Examples (assuming "file.svg" as the input file):
+   Examples (assuming "file.svg" as an input file with 2 layers):
 
-   | Suffix | Output file names |
+   | Suffix | Output file names          |
+   +--------+----------------------------+
    | -%03d  | file-001.svg, file-002.svg |
-   | _%d    | file_1.svg, file_2.svg |
+   | _%d    | file_1.svg, file_2.svg     |
 
 = AUTHOR
 
