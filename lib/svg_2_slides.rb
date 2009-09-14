@@ -12,13 +12,17 @@ class Svg2Slides
     while n > 0
       filename = inputfile.sub('.svg', options['--suffix'] + '.svg') % n
       File.open(filename, 'w') do |f|
-        puts "Writing #{filename} ..."
+        say "Writing #{filename} ..."
         doc.write(f)
         layers.last.remove
         layers.pop
         n = n - 1
       end
     end
+  end
+
+  def say(msg)
+    puts(msg) unless options['--quiet']
   end
 
   OPTIONS = []
@@ -41,6 +45,12 @@ class Svg2Slides
     :aliases => ['-v'],
     :arg => GetoptLong::NO_ARGUMENT,
     :description => 'Display version information and exits.'
+  }
+  OPTIONS << {
+    :name => '--quiet',
+    :aliases => ['-q'],
+    :arg => GetoptLong::NO_ARGUMENT,
+    :description => "Produces no output during execution."
   }
   def options
     @options ||=

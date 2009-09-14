@@ -25,6 +25,12 @@ describe Svg2Slides do
     files.should include('simple_000002.svg')
   end
 
+  it 'can be quiet' do
+    svg2slides '--quiet', 'simple.svg'
+    files.should include('simple-001.svg')
+    stdout.should == ''
+  end
+
   CURDIR = File.expand_path(Dir.pwd)
   TMPDIR = File.expand_path(File.join(File.dirname(__FILE__), '..', 'trash'))
 
