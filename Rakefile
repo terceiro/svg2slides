@@ -11,7 +11,7 @@ task :default => :spec
 Spec::Rake::SpecTask.new do |t|
   t.warning = true
   t.libs << 'lib'
-  t.spec_files = FileList['spec/*.rb']
+  t.spec_files = FileList['spec/*_spec.rb']
   t.spec_opts = ['--colour']
 end
 
