@@ -1,4 +1,4 @@
-= Synopsis
+= SYNOPSIS
 
 svg2slides - generates slides from layered SVG drawings
 
@@ -8,23 +8,36 @@ layers below it, i.e. the layers above the current layer are removed from the
 drawing. This is useful to generate sequences of slides, where slide N is
 composed of layers 1, 2, ..., N of the original drawing.
 
-= Usage
+= USAGE
 
 svg2slides [OPTION] ... FILE [ FILE ...]
+
+= OPTIONS
 
 --help, -h:
    Display help
 
---suffix SUFFIX
-   The suffix used for output filenames. Default: '-%03d'.
+--version, -v:
+   Displays version information and exits.
 
-= Author
+--suffix SUFFIX
+   The suffix used for output filenames. Default: '-%03d'. This suffix will be
+   expanded with the index of the slide and inserted between the basename of
+   the input file and the .svg extension to form the output file names.
+
+   Examples (assuming "file.svg" as the input file):
+
+   | Suffix | Output file names |
+   | -%03d  | file-001.svg, file-002.svg |
+   | _%d    | file_1.svg, file_2.svg |
+
+= AUTHOR
 
 Antonio Terceiro <terceiro@softwarelivre.org>
 
-= Copyright
+= COPYRIGHT
 
-Copyright © 2009 Antonio Terceiro
+Copyright (c) 2009 Antonio Terceiro
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
