@@ -1,1 +1,1 @@
-rm_rf('data')
+rm_rf('data/man')

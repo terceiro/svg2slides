@@ -41,6 +41,8 @@ module CommandRunner
     end
     @stdout = File.readlines('tmp.out').join
     @stderr = File.readlines('tmp.err').join
+    FileUtils.rm_f('tmp.out')
+    FileUtils.rm_f('tmp.err')
   end
   attr_reader :stdout
   attr_reader :stderr
