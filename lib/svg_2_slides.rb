@@ -36,6 +36,12 @@ class Svg2Slides
     :arg => GetoptLong::NO_ARGUMENT,
     :description => 'Displays help',
   }
+  OPTIONS << {
+    :name => '--version',
+    :aliases => ['-v'],
+    :arg => GetoptLong::NO_ARGUMENT,
+    :description => 'Display version information and exits.'
+  }
   def options
     @options ||=
       begin
@@ -74,6 +80,10 @@ class Svg2Slides
     opts = GetoptLong.new(*OPTIONS.map { |item| [item[:name]] + (item[:aliases] || []) + [item[:arg]] })
     opts.each do |opt, arg|
       options[opt] = arg
+    end
+    if options['--version']
+      puts "svg2slides version #{VERSION}"
+      exit(0)
     end
     if ARGV.empty?
       usage
