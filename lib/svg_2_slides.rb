@@ -76,7 +76,7 @@ class Svg2Slides
     end
   end
 
-  def run
+  def process_args
     opts = GetoptLong.new(*OPTIONS.map { |item| [item[:name]] + (item[:aliases] || []) + [item[:arg]] })
     opts.each do |opt, arg|
       options[opt] = arg
@@ -85,6 +85,10 @@ class Svg2Slides
       puts "svg2slides version #{VERSION}"
       exit(0)
     end
+  end
+
+  def run
+    process_args
     if ARGV.empty?
       usage
     end
