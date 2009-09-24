@@ -1,0 +1,13 @@
+= INSTALLATION INSTRUCTIONS
+
+$ sudo ruby setup.rb
+
+= DEPENDENCIES
+
+svg2slides depends only on Ruby's standard library, so if you have Ruby
+installed you should be good.
+
+= GET STARTED
+
+Type `man svg2slides` on your terminal and read the fine manual.
+
