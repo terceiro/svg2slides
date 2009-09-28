@@ -4,8 +4,15 @@ $ sudo ruby setup.rb
 
 = DEPENDENCIES
 
-svg2slides depends only on Ruby's standard library, so if you have Ruby
+Running svg2slides depends only on Ruby's standard library, so if you have Ruby
 installed you should be good.
+
+For installation, though, you'll need the rdtool package
+(http://raa.ruby-lang.org/project/rdtool/), which is used to generate
+svg2slide's manpage. On a Debian system (or derivatives) you can install it
+with:
+
+  apt-get install rdtool
 
 = GET STARTED
 
